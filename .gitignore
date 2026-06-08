@@ -1,0 +1,12 @@
+# Compiled files
+*.o
+
+# Executables
+test_vector
+*.out
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.swp
