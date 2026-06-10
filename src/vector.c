@@ -148,3 +148,19 @@ void vector_pop_back(Vector* vec)
 
     vec->size--;
 }
+
+int vector_front(const Vector* vec)
+{
+    assert(vec != NULL);
+    assert(vec->size > 0);
+
+    return vec->data[0];
+}
+
+int vector_back(const Vector* vec)
+{
+    assert(vec != NULL);
+    assert(vec->size > 0);
+
+    return vec->data[vec->size - 1];
+}

@@ -37,4 +37,8 @@ void vector_set(
     int value
 );
 
+int vector_front(const Vector* vec);
+
+int vector_back(const Vector* vec);
+
 #endif
