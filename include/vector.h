@@ -10,8 +10,11 @@ typedef struct
     size_t capacity;
 } Vector;
 
-Vector* vector_create(void);
+size_t vector_size(const Vector* vec);
+size_t vector_capacity(const Vector* vec);
+int vector_is_empty(const Vector* vec);
 
+Vector* vector_create(void);
 void vector_destroy(Vector* vec);
 
 void vector_push_back(

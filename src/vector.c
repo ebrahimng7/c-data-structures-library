@@ -11,6 +11,27 @@ static int vector_resize(
     size_t new_capacity
 );
 
+size_t vector_size(const Vector* vec)
+{
+    assert(vec != NULL);
+
+    return vec->size;
+}
+
+size_t vector_capacity(const Vector* vec)
+{
+    assert(vec != NULL);
+
+    return vec->capacity;
+}
+
+int vector_is_empty(const Vector* vec)
+{
+    assert(vec != NULL);
+
+    return vec->size == 0;
+}
+
 Vector* vector_create(void)
 {
     Vector* vec = malloc(sizeof(Vector));
