@@ -1,4 +1,7 @@
 #include <stdlib.h>
+#include <assert.h>
+#include <stdlib.h>
+
 #include "vector.h"
 
 #define INITIAL_CAPACITY 4
@@ -86,4 +89,29 @@ void vector_push_back(
     vec->data[vec->size] = value;
 
     vec->size++;
+}
+
+int vector_get(
+    Vector* vec,
+    size_t index
+)
+{
+    assert(vec != NULL);
+
+    assert(index < vec->size);
+
+    return vec->data[index];
+}
+
+void vector_set(
+    Vector* vec,
+    size_t index,
+    int value
+)
+{
+    assert(vec != NULL);
+
+    assert(index < vec->size);
+
+    vec->data[index] = value;
 }

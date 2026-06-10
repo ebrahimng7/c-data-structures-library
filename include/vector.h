@@ -1,10 +1,26 @@
-Vector* vector_create();
+#ifndef VECTOR_H
+#define VECTOR_H
+
+#include <stddef.h>
+
+typedef struct
+{
+    int* data;
+    size_t size;
+    size_t capacity;
+} Vector;
+
+Vector* vector_create(void);
 
 void vector_destroy(Vector* vec);
 
 void vector_push_back(
     Vector* vec,
     int value
+);
+
+void vector_pop_back(
+    Vector* vec
 );
 
 int vector_get(
@@ -18,6 +34,4 @@ void vector_set(
     int value
 );
 
-void vector_pop_back(
-    Vector* vec
-);
+#endif

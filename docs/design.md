@@ -1,17 +1,25 @@
 # Vector Design
 
-Fields:
+## Structure
+
+Vector contains:
 
 - data
 - size
 - capacity
 
-Operations:
+## Operations
 
-- create
-- destroy
-- push_back
-- pop_back
-- get
-- set
-- resize
+- vector_create
+- vector_destroy
+- vector_push_back
+- vector_pop_back
+- vector_get
+- vector_set
+
+## Resize Strategy
+
+When size reaches capacity:
+capacity *= 2
+
+Initial capacity = 4
