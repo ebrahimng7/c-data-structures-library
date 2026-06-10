@@ -137,10 +137,25 @@ void test_vector_properties(void)
     assert(!vector_is_empty(vec));
 
     vector_destroy(vec);
-    
-    test_vector_properties();
 
     printf("test_vector_properties PASSED\n");
+}
+
+void test_vector_front_back(void)
+{
+    Vector* vec = vector_create();
+
+    vector_push_back(vec, 10);
+    vector_push_back(vec, 20);
+    vector_push_back(vec, 30);
+
+    assert(vector_front(vec) == 10);
+
+    assert(vector_back(vec) == 30);
+
+    vector_destroy(vec);
+
+    printf("test_vector_front_back PASSED\n");
 }
 
 int main(void)
@@ -156,6 +171,8 @@ int main(void)
     test_vector_set();
 
     test_vector_pop_back();
+    
+    test_vector_front_back();
 
     printf("\nAll tests passed successfully!\n");
 
