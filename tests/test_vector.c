@@ -98,6 +98,28 @@ void test_vector_set(void)
     printf("test_vector_set PASSED\n");
 }
 
+void test_vector_pop_back(void)
+{
+    Vector* vec = vector_create();
+
+    vector_push_back(vec, 10);
+    vector_push_back(vec, 20);
+    vector_push_back(vec, 30);
+
+    assert(vec->size == 3);
+
+    vector_pop_back(vec);
+
+    assert(vec->size == 2);
+
+    assert(vector_get(vec, 0) == 10);
+    assert(vector_get(vec, 1) == 20);
+
+    vector_destroy(vec);
+
+    printf("test_vector_pop_back PASSED\n");
+}
+
 int main(void)
 {
     test_vector_create_destroy();
@@ -109,6 +131,8 @@ int main(void)
     test_vector_get();
 
     test_vector_set();
+
+    test_vector_pop_back();
 
     printf("\nAll tests passed successfully!\n");
 

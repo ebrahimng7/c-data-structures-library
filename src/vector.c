@@ -115,3 +115,15 @@ void vector_set(
 
     vec->data[index] = value;
 }
+
+void vector_pop_back(Vector* vec)
+{
+    assert(vec != NULL);
+
+    if (vec->size == 0)
+    {
+        return;
+    }
+
+    vec->size--;
+}
