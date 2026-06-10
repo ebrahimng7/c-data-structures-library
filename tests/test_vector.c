@@ -120,6 +120,29 @@ void test_vector_pop_back(void)
     printf("test_vector_pop_back PASSED\n");
 }
 
+void test_vector_properties(void)
+{
+    Vector* vec = vector_create();
+
+    assert(vector_size(vec) == 0);
+
+    assert(vector_capacity(vec) == 4);
+
+    assert(vector_is_empty(vec));
+
+    vector_push_back(vec, 10);
+
+    assert(vector_size(vec) == 1);
+
+    assert(!vector_is_empty(vec));
+
+    vector_destroy(vec);
+    
+    test_vector_properties();
+
+    printf("test_vector_properties PASSED\n");
+}
+
 int main(void)
 {
     test_vector_create_destroy();
