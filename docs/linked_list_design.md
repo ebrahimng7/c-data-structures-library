@@ -1,11 +1,19 @@
 # Linked List Design
 
+## Overview
+
+A singly linked list implementation in C.
+
 ## Node
 
 Each node contains:
 
 - data
-- next
+- next pointer
+
++------+      +------+      +------+
+| 10 | ----> | 20 | ----> | 30 | ----> NULL
++------+      +------+      +------+
 
 ## LinkedList
 
