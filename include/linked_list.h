@@ -9,7 +9,7 @@ typedef struct Node
     struct Node* next;
 } Node;
 
-typedef struct
+typedef struct LinkedList
 {
     Node* head;
     Node* tail;
@@ -18,5 +18,6 @@ typedef struct
 
 LinkedList* linked_list_create(void);
 void linked_list_destroy(LinkedList* list);
+int linked_list_push_front(LinkedList* list, int value);
 
 #endif

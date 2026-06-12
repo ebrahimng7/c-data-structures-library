@@ -39,3 +39,30 @@ void linked_list_destroy(LinkedList* list)
 
     free(list);
 }
+
+int linked_list_push_front(LinkedList* list, int value)
+{
+    assert(list != NULL);
+
+    Node* new_node = malloc(sizeof(Node));
+
+    if (new_node == NULL)
+    {
+        return -1;
+    }
+
+    new_node->data = value;
+
+    new_node->next = list->head;
+
+    list->head = new_node;
+
+    if (list->tail == NULL)
+    {
+        list->tail = new_node;
+    }
+
+    list->size++;
+
+    return 0;
+}
