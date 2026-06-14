@@ -137,3 +137,17 @@ int linked_list_pop_front(LinkedList* list)
 
     return 0;
 }
+
+size_t linked_list_size(const LinkedList* list)
+{
+    assert(list != NULL);
+
+    return list->size;
+}
+
+int linked_list_is_empty(const LinkedList* list)
+{
+    assert(list != NULL);
+
+    return list->size == 0;
+}

@@ -23,5 +23,7 @@ int linked_list_push_back(LinkedList* list, int value);
 int linked_list_front(const LinkedList* list);
 int linked_list_back(const LinkedList* list);
 int linked_list_pop_front(LinkedList* list);
+size_t linked_list_size(const LinkedList* list);
+int linked_list_is_empty(const LinkedList* list);
 
 #endif
