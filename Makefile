@@ -2,33 +2,26 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -std=c11 -Iinclude
 
-SRC_DIR = src
-TEST_DIR = tests
+VECTOR_TARGET = test_vector
+LIST_TARGET = test_linked_list
 
-SRC = $(SRC_DIR)/vector.c
-TEST = $(TEST_DIR)/test_vector.c
+all: $(VECTOR_TARGET) $(LIST_TARGET)
 
-OBJ = $(SRC:.c=.o)
+$(VECTOR_TARGET):
+	$(CC) $(CFLAGS) src/vector.c tests/test_vector.c -o $(VECTOR_TARGET)
 
-TARGET = test_vector
+$(LIST_TARGET):
+	$(CC) $(CFLAGS) src/linked_list.c tests/test_linked_list.c -o $(LIST_TARGET)
 
-all: $(TARGET)
+test-vector: $(VECTOR_TARGET)
+	./$(VECTOR_TARGET)
 
-$(TARGET): $(OBJ) $(TEST)
-	$(CC) $(CFLAGS) $(OBJ) $(TEST) -o $(TARGET)
-
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c include/vector.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-run: $(TARGET)
-	./$(TARGET)
-
-test: run
+test-linked-list: $(LIST_TARGET)
+	./$(LIST_TARGET)
 
 clean:
-	rm -f $(OBJ)
-	rm -f $(TARGET)
+	rm -f $(VECTOR_TARGET)
+	rm -f $(LIST_TARGET)
+	rm -f src/*.o
 
-rebuild: clean all
-
-.PHONY: all run test clean rebuild
+.PHONY: all clean test-vector test-linked-list
