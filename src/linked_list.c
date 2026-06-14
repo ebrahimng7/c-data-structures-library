@@ -66,3 +66,33 @@ int linked_list_push_front(LinkedList* list, int value)
 
     return 0;
 }
+
+int linked_list_push_back(LinkedList* list, int value)
+{
+    assert(list != NULL);
+
+    Node* new_node = malloc(sizeof(Node));
+
+    if (new_node == NULL)
+    {
+        return -1;
+    }
+
+    new_node->data = value;
+    new_node->next = NULL;
+
+    if (list->tail == NULL)
+    {
+        list->head = new_node;
+        list->tail = new_node;
+    }
+    else
+    {
+        list->tail->next = new_node;
+        list->tail = new_node;
+    }
+
+    list->size++;
+
+    return 0;
+}
