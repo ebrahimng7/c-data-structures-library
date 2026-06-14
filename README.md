@@ -2,41 +2,44 @@
 
 A collection of fundamental data structures implemented in C.
 
-## Current Progress
+## Implemented Data Structures
 
 ### Vector
-- [x] Project Structure
-- [x] Vector Design
-- [x] Vector Interface
-- [x] Vector Create/Destroy
-- [x] Vector Push Back
-- [x] Vector Resize
-- [x] Vector Get/Set
-- [x] Vector Pop Back
-- [x] Vector Front/Back
-- [x] Vector Utility Functions
-  - [x] vector_size()
-  - [x] vector_capacity()
-  - [x] vector_is_empty()
-- [x] Unit Tests
-- [x] Makefile
 
-## Planned Features
+- create / destroy
+- push_back / pop_back
+- get / set
+- front / back
+- size / capacity
+- is_empty
 
-- [x] Dynamic Array (Vector)
-- [ ] Linked List
-- [ ] Stack
-- [ ] Queue
-- [ ] Hash Table
+### Linked List
+
+- create / destroy
+- push_front
+- push_back
+- pop_front
+- front
+- back
+- size
+- is_empty
 
 ## Project Structure
 
 ```text
 .
 ├── docs/
+│   ├── design.md
+│   └── linked_list_design.md
 ├── include/
+│   ├── vector.h
+│   └── linked_list.h
 ├── src/
+│   ├── vector.c
+│   └── linked_list.c
 ├── tests/
+│   ├── test_vector.c
+│   └── test_linked_list.c
 ├── Makefile
 └── README.md
 ```
@@ -47,22 +50,16 @@ A collection of fundamental data structures implemented in C.
 make
 ```
 
-## Run Tests
+## Run Vector Tests
 
 ```bash
-make test
+make test-vector
 ```
 
-## Run
+## Run Linked List Tests
 
 ```bash
-make run
-```
-
-## Rebuild
-
-```bash
-make rebuild
+make test-linked-list
 ```
 
 ## Clean
@@ -71,34 +68,7 @@ make rebuild
 make clean
 ```
 
-## Features Implemented
+## Releases
 
-### Vector API
-
-```c
-vector_create()
-vector_destroy()
-
-vector_push_back()
-vector_pop_back()
-
-vector_get()
-vector_set()
-
-vector_front()
-vector_back()
-
-vector_size()
-vector_capacity()
-
-vector_is_empty()
-```
-
-## Future Work
-
-- Generic Data Structures
-- Linked List
-- Stack
-- Queue
-- Hash Table
-- Improved Error Handling
+- v1.0.0 Vector
+- v2.0.0 Linked List
