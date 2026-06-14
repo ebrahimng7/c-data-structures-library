@@ -112,3 +112,28 @@ int linked_list_back(const LinkedList* list)
 
     return list->tail->data;
 }
+
+int linked_list_pop_front(LinkedList* list)
+{
+    assert(list != NULL);
+
+    if (list->head == NULL)
+    {
+        return -1;
+    }
+
+    Node* node_to_delete = list->head;
+
+    list->head = list->head->next;
+
+    free(node_to_delete);
+
+    list->size--;
+
+    if (list->head == NULL)
+    {
+        list->tail = NULL;
+    }
+
+    return 0;
+}
