@@ -142,6 +142,39 @@ void test_linked_list_pop_front(void)
     printf("test_linked_list_pop_front PASSED\n");
 }
 
+void test_linked_list_properties(void)
+{
+    LinkedList* list = linked_list_create();
+
+    assert(linked_list_size(list) == 0);
+
+    assert(linked_list_is_empty(list));
+
+    linked_list_push_back(list, 10);
+
+    assert(linked_list_size(list) == 1);
+
+    assert(!linked_list_is_empty(list));
+
+    linked_list_push_back(list, 20);
+
+    assert(linked_list_size(list) == 2);
+
+    linked_list_pop_front(list);
+
+    assert(linked_list_size(list) == 1);
+
+    linked_list_pop_front(list);
+
+    assert(linked_list_size(list) == 0);
+
+    assert(linked_list_is_empty(list));
+
+    linked_list_destroy(list);
+
+    printf("test_linked_list_properties PASSED\n");
+}
+
 int main(void)
 {
     test_linked_list_create_destroy();
@@ -149,6 +182,7 @@ int main(void)
     test_linked_list_push_back();
     test_linked_list_front_back();
     test_linked_list_pop_front();
+    test_linked_list_properties();
     
     printf("\nAll linked list tests passed successfully!\n");
 
