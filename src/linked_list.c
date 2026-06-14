@@ -96,3 +96,19 @@ int linked_list_push_back(LinkedList* list, int value)
 
     return 0;
 }
+
+int linked_list_front(const LinkedList* list)
+{
+    assert(list != NULL);
+    assert(list->head != NULL);
+
+    return list->head->data;
+}
+
+int linked_list_back(const LinkedList* list)
+{
+    assert(list != NULL);
+    assert(list->tail != NULL);
+
+    return list->tail->data;
+}
