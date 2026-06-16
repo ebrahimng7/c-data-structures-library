@@ -2,7 +2,8 @@
 
 test_vector
 test_linked_list
-test_stack# Compiled files
+test_stack
+# Compiled files
 *.o
 
 # Executables
