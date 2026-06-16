@@ -2,6 +2,8 @@
 
 #include <stdlib.h>
 
+#include <assert.h>
+
 Stack* stack_create(void)
 {
     Stack* stack = malloc(sizeof(Stack));
@@ -32,4 +34,25 @@ void stack_destroy(Stack* stack)
     linked_list_destroy(stack->list);
 
     free(stack);
+}
+
+int stack_push(Stack* stack, int value)
+{
+    assert(stack != NULL);
+
+    return linked_list_push_front(stack->list, value);
+}
+
+int stack_pop(Stack* stack)
+{
+    assert(stack != NULL);
+
+    return linked_list_pop_front(stack->list);
+}
+
+int stack_top(const Stack* stack)
+{
+    assert(stack != NULL);
+
+    return linked_list_front(stack->list);
 }
