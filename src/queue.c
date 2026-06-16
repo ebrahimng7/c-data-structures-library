@@ -56,3 +56,17 @@ int queue_front(const Queue* queue)
 
     return linked_list_front(queue->list);
 }
+
+size_t queue_size(const Queue* queue)
+{
+    assert(queue != NULL);
+
+    return linked_list_size(queue->list);
+}
+
+int queue_is_empty(const Queue* queue)
+{
+    assert(queue != NULL);
+
+    return linked_list_is_empty(queue->list);
+}

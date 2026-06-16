@@ -20,4 +20,8 @@ int queue_dequeue(Queue* queue);
 
 int queue_front(const Queue* queue);
 
+size_t queue_size(const Queue* queue);
+
+int queue_is_empty(const Queue* queue);
+
 #endif
