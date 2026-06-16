@@ -56,3 +56,17 @@ int stack_top(const Stack* stack)
 
     return linked_list_front(stack->list);
 }
+
+size_t stack_size(const Stack* stack)
+{
+    assert(stack != NULL);
+
+    return linked_list_size(stack->list);
+}
+
+int stack_is_empty(const Stack* stack)
+{
+    assert(stack != NULL);
+
+    return linked_list_is_empty(stack->list);
+}

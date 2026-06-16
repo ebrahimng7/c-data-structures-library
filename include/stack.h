@@ -20,4 +20,8 @@ int stack_pop(Stack* stack);
 
 int stack_top(const Stack* stack);
 
+size_t stack_size(const Stack* stack);
+
+int stack_is_empty(const Stack* stack);
+
 #endif
