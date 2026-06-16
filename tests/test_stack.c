@@ -51,11 +51,44 @@ void test_stack_operations(void)
     printf("test_stack_operations PASSED\n");
 }
 
+void test_stack_properties(void)
+{
+    Stack* stack = stack_create();
+
+    assert(stack_is_empty(stack));
+
+    assert(stack_size(stack) == 0);
+
+    stack_push(stack, 10);
+
+    assert(!stack_is_empty(stack));
+
+    assert(stack_size(stack) == 1);
+
+    stack_push(stack, 20);
+
+    assert(stack_size(stack) == 2);
+
+    stack_pop(stack);
+
+    assert(stack_size(stack) == 1);
+
+    stack_pop(stack);
+
+    assert(stack_size(stack) == 0);
+
+    assert(stack_is_empty(stack));
+
+    stack_destroy(stack);
+
+    printf("test_stack_properties PASSED\n");
+}
+
 int main(void)
 {
     test_stack_create_destroy();
     test_stack_operations();
-
+    test_stack_properties();
     printf("\nAll stack tests passed successfully!\n");
 
     return 0;
