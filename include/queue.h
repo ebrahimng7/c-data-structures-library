@@ -14,4 +14,10 @@ Queue* queue_create(void);
 
 void queue_destroy(Queue* queue);
 
+int queue_enqueue(Queue* queue, int value);
+
+int queue_dequeue(Queue* queue);
+
+int queue_front(const Queue* queue);
+
 #endif

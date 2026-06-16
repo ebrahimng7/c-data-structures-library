@@ -35,3 +35,24 @@ void queue_destroy(Queue* queue)
 
     free(queue);
 }
+
+int queue_enqueue(Queue* queue, int value)
+{
+    assert(queue != NULL);
+
+    return linked_list_push_back(queue->list, value);
+}
+
+int queue_dequeue(Queue* queue)
+{
+    assert(queue != NULL);
+
+    return linked_list_pop_front(queue->list);
+}
+
+int queue_front(const Queue* queue)
+{
+    assert(queue != NULL);
+
+    return linked_list_front(queue->list);
+}
