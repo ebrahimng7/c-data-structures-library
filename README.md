@@ -9,7 +9,6 @@ A collection of fundamental data structures implemented in C.
 - create / destroy
 - push_back / pop_back
 - get / set
-- front / back
 - size / capacity
 - is_empty
 
@@ -24,25 +23,23 @@ A collection of fundamental data structures implemented in C.
 - size
 - is_empty
 
-## Project Structure
+### Stack
 
-```text
-.
-├── docs/
-│   ├── design.md
-│   └── linked_list_design.md
-├── include/
-│   ├── vector.h
-│   └── linked_list.h
-├── src/
-│   ├── vector.c
-│   └── linked_list.c
-├── tests/
-│   ├── test_vector.c
-│   └── test_linked_list.c
-├── Makefile
-└── README.md
-```
+- create / destroy
+- push
+- pop
+- top
+- size
+- is_empty
+
+### Queue
+
+- create / destroy
+- enqueue
+- dequeue
+- front
+- size
+- is_empty
 
 ## Build
 
@@ -50,16 +47,13 @@ A collection of fundamental data structures implemented in C.
 make
 ```
 
-## Run Vector Tests
+## Run Tests
 
 ```bash
 make test-vector
-```
-
-## Run Linked List Tests
-
-```bash
 make test-linked-list
+make test-stack
+make test-queue
 ```
 
 ## Clean
@@ -72,3 +66,5 @@ make clean
 
 - v1.0.0 Vector
 - v2.0.0 Linked List
+- v3.0.0 Stack
+- v4.0.0 Queue
