@@ -3,6 +3,7 @@
 test_vector
 test_linked_list
 test_stack
+test_queue
 # Compiled files
 *.o
 
